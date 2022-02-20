@@ -1,0 +1,297 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* variables */
+body {
+  line-height: 1.5;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background: url(../images/bg-intro-mobile.png), #FF7A7A;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'content' 'form';
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  padding: 1.2rem;
+  overflow-x: hidden;
+}
+
+.main__information {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+}
+
+.main__information .information-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.main__information .information-paragraph {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.main__information .information-title,
+.main__information .information-paragraph {
+  text-align: center;
+  color: #fff;
+}
+
+.main .sign-up {
+  position: relative;
+  min-width: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: form;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 0;
+}
+
+.main .sign-up .button-cta {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background-color: #5F54A4;
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.main .sign-up .button-cta--bold {
+  font-weight: 700;
+}
+
+.main .sign-up .button-cta::after {
+  content: '';
+  position: absolute;
+  background-color: #3D3B48;
+  opacity: .35;
+  width: 100%;
+  height: 100%;
+  bottom: -7px;
+  left: 0;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.main .sign-up__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.main .sign-up__form .form-item {
+  border: 1px solid #B8B5D3;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+}
+
+.main .sign-up__form .form-item::-webkit-input-placeholder {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main .sign-up__form .form-item:-ms-input-placeholder {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main .sign-up__form .form-item::-ms-input-placeholder {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main .sign-up__form .form-item::placeholder {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main .sign-up__form .form-button {
+  position: relative;
+  background-color: #38CB8B;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.main .sign-up__form .form-button::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #2ba570;
+  bottom: -8px;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 5px;
+  left: 0;
+}
+
+.main .sign-up__form .form-info {
+  text-align: center;
+  font-size: .75rem;
+  padding-inline: 1.2rem;
+  color: #B8B5D3;
+}
+
+.main .sign-up__form .form-info a {
+  color: #FF7A7A;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background: url(../images/bg-intro-desktop.png), #FF7A7A;
+  }
+  .main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    place-items: center;
+        grid-template-areas: '. .'  'content form' '. .';
+    padding-inline: 3rem;
+  }
+  .main__information {
+    padding-left: 6rem;
+  }
+  .main .information-title {
+    font-size: 3.2rem !important;
+  }
+  .main .information-paragraph,
+  .main .information-title {
+    text-align: left;
+  }
+  .main .sign-up {
+    padding-inline: 4rem;
+    margin-top: 1px;
+  }
+  .main .sign-up .button-cta {
+    margin-right: 2rem;
+  }
+  .main .sign-up__form {
+    padding: 2rem;
+    margin-right: 2rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
