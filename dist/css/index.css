@@ -189,7 +189,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1rem;
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -199,6 +198,11 @@ body {
   border: 1px solid #B8B5D3;
   padding: 0.8rem 1rem;
   border-radius: 5px;
+  margin: 10px 0;
+}
+
+.main .sign-up__form .form-item:focus {
+  outline: 1px solid #5F54A4;
 }
 
 .main .sign-up__form .form-item::-webkit-input-placeholder {
@@ -221,6 +225,24 @@ body {
   font-size: 1rem;
 }
 
+.main .sign-up__form .form-item--error {
+  background: url("../images/icon-error.svg") no-repeat;
+  background-size: 20px 20px;
+  background-position: 95% center;
+}
+
+.main .sign-up__form .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 0;
+}
+
 .main .sign-up__form .form-button {
   position: relative;
   background-color: #38CB8B;
@@ -231,14 +253,24 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  z-index: 1;
+  border: transparent;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.main .sign-up__form .form-button:hover, .main .sign-up__form .form-button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  background-color: #60d6a3;
 }
 
 .main .sign-up__form .form-button::after {
   position: absolute;
   content: '';
   width: 100%;
-  height: 100%;
+  height: 20px;
   background-color: #2ba570;
   bottom: -8px;
   z-index: -1;
@@ -257,6 +289,19 @@ body {
 .main .sign-up__form .form-info a {
   color: #FF7A7A;
   font-weight: 700;
+}
+
+.main .sign-up__form .span-error {
+  display: none;
+}
+
+.main .sign-up__form .error {
+  display: inline-block;
+  color: #FF7A7A;
+  font-size: .8rem;
+  text-align: end;
+  margin-bottom: 8px;
+  margin-top: -8px;
 }
 
 @media (min-width: 1024px) {
@@ -285,13 +330,20 @@ body {
   .main .sign-up {
     padding-inline: 4rem;
     margin-top: 1px;
+    gap: 1rem;
   }
   .main .sign-up .button-cta {
     margin-right: 2rem;
   }
   .main .sign-up__form {
-    padding: 2rem;
+    padding: 3rem;
     margin-right: 2rem;
+  }
+  .main .sign-up__form [type="fName"] {
+    margin-top: 0;
+  }
+  .main .sign-up__form [type="password"] {
+    margin-bottom: 14px;
   }
 }
 /*# sourceMappingURL=index.css.map */

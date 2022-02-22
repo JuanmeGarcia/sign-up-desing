@@ -13,9 +13,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution {
+      font-size: 11px; text-align: center; 
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
+  <script src="./js/index.js" defer></script>
 </head>
 <body>
 
@@ -31,25 +39,34 @@
     </div>
 
     <div class="sign-up">
-      <a href="" class="button-cta"> <span class="button-cta--bold">Try it free 7 days</span> then $20/mo. thereafter</a>
+      <a href="#" class="button-cta"> <span class="button-cta--bold">Try it free 7 days</span> then $20/mo. thereafter</a>
 
-      <form action="" class="sign-up__form">
-        <input type="fname" placeholder="First Name" class="form-item">
-        <input type="lname" placeholder="Last Name" class="form-item">
-        <input type="email" placeholder="Email Address" class="form-item">
-        <input type="password" placeholder="Password" class="form-item">
-        <a href="#" class="form-button">Claim your free trial</a>
+      <form action="/" class="sign-up__form" id="form">
+        <input type="fname" placeholder="First Name" class="form-item" autocomplete="name"  id="firstName">
+        <span class="fname span-error"></span>
+
+        <input type="lname" placeholder="Last Name" class="form-item"  id="lastName">
+        <span class="lname span-error"></span>
+
+        <input type="text" placeholder="Email Address" class="form-item" autocomplete="email"  id="email">
+        <span class="email span-error"></span>
+
+        <input type="password" placeholder="Password" class="form-item" autocomplete="current-password"  id="password">
+        <span class="password span-error"></span>
+
+        <button type="submit" class="form-button" id="button">Claim your free trial</button>
         <span class="form-info">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></span>
+
       </form>
     </div>
   
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer>
   </main>
   
-  <!-- <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer> -->
 </body>
 </html>
